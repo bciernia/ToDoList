@@ -15,3 +15,19 @@ export const createParagraph = (paragraphText, additionalClasses = []) => {
     return p;
 }
 
+export const createBtn = (text, additionalClasses = [] ) => {
+    const btn = document.createElement('button');
+
+    btn.innerText = text;
+    btn.classList.add(...additionalClasses);
+
+    return btn;
+}
+
+export const createSpan = (additionalClasses = []) => {
+    const span = document.createElement('span');
+
+    span.classList.add(...additionalClasses);
+
+    return span;
+}
