@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Countries App</title>
+  <title>ToDo List</title>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -16,25 +16,36 @@
 </head>
 <body>
 
+<section class="header">
+  HEADER
+</section>
+
 <section class="main-container">
-  <h1>Your tasks</h1>
 
+  <section class="create-task-section" id="new-task-section">
+    <button class="btn btn-cancel-new-task" id="close-section">
+      X
+    </button>
+    <form class="new-task-form">
+      <label for="task-description">Task description</label>
+      <textarea class="task-desc-area" id="task-description" name="task-description" rows="6" cols="50" ></textarea>
 
-  <button class="btn" id="add-task-btn">
-    Add task
-  </button>
+      <input class="btn-task-desc-submit" type="submit" value="Add task"/>
+    </form>
 
-  <div class="task-container">
-    <div class="task">
-      <p>First task</p>
+  </section>
+
+  <section class="task-section">
+    <h1>Your tasks</h1>
+
+    <button class="btn btn-add-task" id="add-task-btn">
+      +
+    </button>
+
+    <div class="task-container">
     </div>
-    <div class="task">
-      <p>Second task</p>
-    </div>
-    <div class="task">
-      <p>Third task</p>
-    </div>
-  </div>
+
+  </section>
 
 </section>
 

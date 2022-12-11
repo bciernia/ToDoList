@@ -11,8 +11,8 @@ export class TaskList {
         this.tasks.length = 0;
     }
 
-    removeTaskFromList(no) {
-        this.tasks.splice(no - 1, 1);
+    removeTaskFromList(taskId) {
+        this.tasks.splice(taskId - 1, 1);
     }
 
     getTasks() {
