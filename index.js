@@ -1,4 +1,3 @@
-import {createDiv, createParagraph, createBtn, createSpan} from "./modules/design-system/core/core.js";
 import {TaskList} from "./modules/task-system/task/taskList.js";
 import {Task} from "./modules/task-system/task/task.js";
 import {createTaskList} from "./modules/task-system/task/taskCreation.js"
@@ -10,8 +9,6 @@ const closeNewTaskSectionBtn = document.querySelector('#close-section');
 const addTaskForm = document.querySelector('.new-task-form');
 
 const taskList = new TaskList();
-
-
 
 addTaskBtn.addEventListener('click', () => {
     newTaskForm.classList.toggle('create-task-section-active');

@@ -31,3 +31,11 @@ export const createSpan = (additionalClasses = []) => {
 
     return span;
 }
+
+export const createLi = (additionalClasses = []) => {
+    const li = document.createElement('li');
+
+    li.classList.add(...additionalClasses);
+
+    return li;
+}

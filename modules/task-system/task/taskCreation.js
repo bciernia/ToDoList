@@ -1,11 +1,11 @@
-import {createBtn, createDiv, createParagraph} from "../../design-system/core/core.js";
+import {createBtn, createDiv, createLi, createParagraph} from "../../design-system/core/core.js";
 
 export const createTaskList = (taskContainer, taskList) => {
     taskContainer.innerText = "";
 
     taskList.getTasks().forEach((task, i) => {
         const {id, desc} = task;
-        const newLi = document.createElement('li');
+        const newLi = createLi([]);
         const newDiv = createDiv(['task']);
         const newParagraph = createParagraph(desc);
         const newBtn = createBtn('X', ['btn', 'btn-remove-task'])
