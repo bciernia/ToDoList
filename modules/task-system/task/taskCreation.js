@@ -17,14 +17,11 @@ export const createTaskList = (taskContainer, taskList) => {
 
         taskContainer.appendChild(newLi);
 
-        newDiv.addEventListener('click', () => {
+        newBtn.addEventListener('click', event => {
             taskContainer.innerText = "";
-            taskList.tasks.splice(task.id-1, 1);
-            createTaskList(taskContainer,taskList);
-        })
-
-        newBtn.addEventListener('click', () => {
-
+            taskList.removeTaskFromList(Number(event.target.dataset.taskId));
+            createTaskList(taskContainer, taskList);
         })
     })
 }
+

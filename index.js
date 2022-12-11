@@ -11,10 +11,7 @@ const addTaskForm = document.querySelector('.new-task-form');
 
 const taskList = new TaskList();
 
-const removeTask = event => {
-    taskList.removeTaskFromList(Number(event.target.dataset.taskId));
-    createTaskList(taskContainer, taskList);
-}
+
 
 addTaskBtn.addEventListener('click', () => {
     newTaskForm.classList.toggle('create-task-section-active');
