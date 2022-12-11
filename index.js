@@ -1,28 +1,13 @@
-import {TaskList} from "./modules/task-system/task/taskList.js";
-import {Task} from "./modules/task-system/task/task.js";
-import {createTaskList} from "./modules/task-system/task/taskCreation.js"
+import {changeModalVisibility} from "./modules/task-system/create-task-modal/createTaskModal.js"
 
 const addTaskBtn = document.querySelector('#add-task-btn');
-const taskContainer = document.querySelector('.task-container');
-const newTaskForm = document.querySelector('#new-task-section');
 const closeNewTaskSectionBtn = document.querySelector('#close-section');
-const addTaskForm = document.querySelector('.new-task-form');
 
-const taskList = new TaskList();
 
 addTaskBtn.addEventListener('click', () => {
-    newTaskForm.classList.toggle('create-task-section-active');
+    changeModalVisibility();
 })
 
 closeNewTaskSectionBtn.addEventListener('click', () => {
-    newTaskForm.classList.toggle('create-task-section-active');
-})
-
-addTaskForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const task = new Task(taskList.tasks.length+1, newTaskForm.querySelector('.task-desc-area').value);
-    newTaskForm.classList.toggle('create-task-section-active');
-    newTaskForm.querySelector('.task-desc-area').value = "";
-    taskList.tasks.push(task);
-    createTaskList(taskContainer, taskList);
+    changeModalVisibility();
 })

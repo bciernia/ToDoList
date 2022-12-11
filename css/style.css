@@ -28,7 +28,8 @@
     height: 20rem;
     width: 40rem;
     background-color: #AA8B56;
-    left: 22.5%;
+    top: -20%;
+    left: 50%;
     transition: all 0.5s ease-out;
     transform: translateX(-50%) scale(0);
 }
@@ -40,6 +41,7 @@
 .create-task-section-active{
     transition: all 0.5s ease-in-out;
     transform: translateX(-50%) scale(1);
+    top: 3.5%;
 }
 
 .new-task-form{

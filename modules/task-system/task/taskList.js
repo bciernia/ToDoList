@@ -19,7 +19,7 @@ export class TaskList {
         return this.tasks.map((task, i) => {
             return{
                 id: i+1,
-                desc: task.desc,
+                description: task.description,
             };
         });
     }

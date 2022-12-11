@@ -1,10 +1,9 @@
 export class Task{
-    constructor(id, desc) {
-        this.id = id;
-        this.desc = desc;
+    constructor(description) {
+        this.description = description;
     }
 
     changeTaskDescription(editedDesc) {
-        this.desc = editedDesc;
+        this.description = editedDesc;
     }
 }
