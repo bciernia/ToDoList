@@ -28,7 +28,8 @@
     height: 20rem;
     width: 40rem;
     background-color: #AA8B56;
-    left: 50%;
+    left: 22.5%;
+    transition: all 0.5s ease-out;
     transform: translateX(-50%) scale(0);
 }
 
@@ -37,6 +38,7 @@
 }
 
 .create-task-section-active{
+    transition: all 0.5s ease-in-out;
     transform: translateX(-50%) scale(1);
 }
 
@@ -52,6 +54,12 @@
     position: absolute;
     right: .25rem;
     top: .25rem;
+}
+
+.btn-task-desc-submit{
+    position: relative;
+    width: 15rem;
+    margin: 1rem auto;
 }
 
 .task-section{
