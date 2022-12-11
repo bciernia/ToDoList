@@ -1,4 +1,4 @@
-import {changeModalVisibility} from "./modules/task-system/create-task-modal/createTaskModal.js"
+import {changeModalVisibility} from "./modules/task-system/task-modal/createTaskModal.js"
 
 const addTaskBtn = document.querySelector('#add-task-btn');
 const closeNewTaskSectionBtn = document.querySelector('#close-section');

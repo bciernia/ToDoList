@@ -28,10 +28,10 @@
     height: 20rem;
     width: 40rem;
     background-color: #AA8B56;
-    top: -20%;
+    top: -25rem;
     left: 50%;
     transition: all 0.5s ease-out;
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) ;
 }
 
 .task-desc-area{
@@ -40,7 +40,7 @@
 
 .create-task-section-active{
     transition: all 0.5s ease-in-out;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) ;
     top: 3.5%;
 }
 
@@ -107,8 +107,12 @@
     width: 3rem;
 }
 
+.btn-edit-task{
+    grid-area: 1/1/2/1;
+    border: none;
+}
+
 .btn-remove-task{
     grid-column: 3/4;
     border: none;
-
 }
