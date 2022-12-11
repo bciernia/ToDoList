@@ -11,11 +11,16 @@ export class TaskList {
         this.tasks.length = 0;
     }
 
-    removeTaskFromList(taskId) {
-        this.tasks.splice(taskId - 1, 1);
+    removeTaskFromList(taskNumber) {
+        this.tasks.splice(taskNumber - 1, 1);
     }
 
     getTasks() {
-        return this.tasks
+        return this.tasks.map((task, i) => {
+            return{
+                id: i+1,
+                desc: task.desc,
+            };
+        });
     }
 }

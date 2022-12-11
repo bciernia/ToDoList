@@ -10,6 +10,43 @@ const addTaskForm = document.querySelector('.new-task-form');
 
 const taskList = new TaskList();
 
+const removeTask = event => {
+    taskList.removeTaskFromList(Number(event.target.dataset.taskId));
+    createTaskList();
+}
+
+const createTaskList = () => {
+    taskContainer.innerText = "";
+
+    taskList.getTasks().forEach((task, i) => {
+        const {id, desc} = task;
+        const newLi = document.createElement('li');
+        const newDiv = createDiv(['task']);
+        const newParagraph = createParagraph(desc);
+        const newBtn = createBtn('X', ['btn', 'btn-remove-task'])
+
+        newDiv.appendChild(newParagraph);
+        newDiv.appendChild(newBtn);
+        newLi.appendChild(newDiv);
+        newLi.dataset.taskId = id;
+
+        taskContainer.appendChild(newLi);
+
+        newDiv.addEventListener('click', () => {
+            taskContainer.innerText = "";
+
+            taskList.tasks.splice(task.id-1, 1);
+
+            createTaskList(taskList);
+        })
+
+
+        newBtn.addEventListener('click', () => {
+
+        })
+    })
+}
+
 addTaskBtn.addEventListener('click', () => {
     newTaskForm.classList.toggle('create-task-section-active');
 })
@@ -20,25 +57,8 @@ closeNewTaskSectionBtn.addEventListener('click', () => {
 
 addTaskForm.addEventListener('submit', event => {
     event.preventDefault();
-
-    const task = new Task(taskList.tasks.length+1, 'desc');
-    const newDiv = createDiv(['task']);
-    const newParagraph = createParagraph(newTaskForm.querySelector('.task-desc-area').value);
-    const newBtn = createBtn('X', ['btn', 'btn-remove-task'])
-
-    taskList.tasks.push(task);
-    newDiv.appendChild(newParagraph);
-    newDiv.appendChild(newBtn);
-    taskContainer.appendChild(newDiv);
-
-    newDiv.addEventListener('click', () => {
-        console.log(`Clicked ${newParagraph.innerText} task`);
-    })
-
+    const task = new Task(taskList.tasks.length+1, newTaskForm.querySelector('.task-desc-area').value);
     newTaskForm.classList.toggle('create-task-section-active');
-
-    newBtn.addEventListener('click', () => {
-
-    })
-
+    taskList.tasks.push(task);
+    createTaskList();
 })
