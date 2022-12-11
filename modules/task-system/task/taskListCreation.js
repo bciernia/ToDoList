@@ -25,7 +25,7 @@ export const createTaskList = () => {
         newLi.dataset.taskId = id;
 
 
-        newLi.addEventListener('click', removeTask);
+        newBtn.addEventListener('click', removeTask);
         taskContainer.appendChild(newLi);
     })
 }
