@@ -11,7 +11,7 @@ const removeTask = (event) => {
 }
 
 const editTask = (event) => {
-    const task = taskList.editTask([Number(event.target.closest('li').dataset.taskId)] - 1);
+    const task = taskList.getTaskToEdit([Number(event.target.closest('li').dataset.taskId)] - 1);
     taskList.removeTaskFromList(Number(event.target.closest('li').dataset.taskId));
     fillModalWithTaskToEdit(task);
 }

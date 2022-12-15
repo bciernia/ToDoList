@@ -11,7 +11,7 @@ export class TaskList {
         this.tasks.length = 0;
     }
 
-    editTask(taskNumber) {
+    getTaskToEdit(taskNumber) {
         return this.tasks[taskNumber];
     }
 
