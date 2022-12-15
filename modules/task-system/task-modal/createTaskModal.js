@@ -10,6 +10,13 @@ export const changeModalVisibility = () => {
     newTaskForm.classList.toggle(TASK_MODAL_ACTIVE);
 }
 
+export const fillModalWithTaskToEdit = (task) => {
+    newTaskForm.classList.toggle(TASK_MODAL_ACTIVE);
+    newTaskForm.querySelector('.task-desc-area').value = task.description;
+}
+
+
+
 addTaskForm.addEventListener('submit', (event) => {
     event.preventDefault();
 

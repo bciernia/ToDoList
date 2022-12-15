@@ -11,6 +11,10 @@ export class TaskList {
         this.tasks.length = 0;
     }
 
+    editTask(taskNumber) {
+        return this.tasks[taskNumber];
+    }
+
     removeTaskFromList(taskNumber) {
         this.tasks.splice(taskNumber - 1, 1);
     }

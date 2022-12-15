@@ -1,6 +1,6 @@
 import {createBtn, createDiv, createLi, createParagraph} from "../../design-system/core/core.js";
 import {TaskList} from "./taskList.js";
-import {changeModalVisibility} from "../task-modal/createTaskModal.js";
+import {changeModalVisibility, fillModalWithTaskToEdit} from "../task-modal/createTaskModal.js";
 
 const taskContainer = document.querySelector('.task-container');
 export const taskList = new TaskList();
@@ -10,10 +10,10 @@ const removeTask = (event) => {
     createTaskList();
 }
 
-const editTask = (event, task) => {
-    task = taskList[Number(event.target.closest('li').dataset.taskId)];
-
-    changeModalVisibility();
+const editTask = (event) => {
+    const task = taskList.editTask([Number(event.target.closest('li').dataset.taskId)] - 1);
+    taskList.removeTaskFromList(Number(event.target.closest('li').dataset.taskId));
+    fillModalWithTaskToEdit(task);
 }
 
 export const createTaskList = () => {
