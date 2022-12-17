@@ -1,9 +1,10 @@
 :root{
-    --headerColor: #395144;
-    --primaryColor: #4E6C50;
-    --secondaryColor: #AA8B56;
-    --footerColor: #F0EBCE;
-    --textColor: #000000;
+    --headerColor: #FEFCF3;
+    --primaryColor: #F5EBE0;
+    --secondaryColor: #22b1b6;
+    --footerColor: #DBA39A;
+    --textColor: #22b1b6;
+    --btnTextColor: #22b1b6;
 }
 
 *{
@@ -14,6 +15,7 @@
 
 body{
     font-family: "Montserrat", sans-serif;
+    font-color: var(--textColor);
 }
 
 .main-container{
@@ -84,7 +86,7 @@ body{
     padding: 1rem;
     margin: .75rem 0;
     border-radius: 50px;
-    border: 3px solid;
+    border: 4px solid var(--secondaryColor);
 }
 
 .task p{
@@ -96,7 +98,7 @@ body{
 
 .btn{
     background-color: transparent;
-    color: var(--textColor);
+    color: var(--btnTextColor);
     font-weight: bold;
     font-size: 1.5rem;
     border: none
